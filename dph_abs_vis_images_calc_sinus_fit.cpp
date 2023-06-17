@@ -58,7 +58,7 @@ int levmar_sinus(double* t_data_inp, double* y_data_inp, const unsigned int M_in
         f(index_0) = y_data_inp_vec(index_0) - x0_inp_vec(0) * std::sin(t_data_inp_vec(index_0) + x0_inp_vec(1)) - x0_inp_vec(2);
     }
     // initialize g vector
-    VectorXd g(M_inp);
+    VectorXd g(3);
     g = J.transpose() * f;
     // calculate g norm
     double g_norm = g.norm();
